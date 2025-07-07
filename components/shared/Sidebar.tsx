@@ -128,17 +128,7 @@ const Sidebar = () => {
         </div>
         <div className=" mt-auto space-y-2  ">
           <ThemeToggle />
-          <div className="  rounded-[10px] w-full bg-card-foreground border p-4">
-            <h2 className="text-sm 2xl:text-base font-semibold 3xl:text-lg">
-              Share Your Expertise
-            </h2>
-            <p className="text-xs 2xl:text-sm mb-3 3xl:text-base">
-              Share and earn money
-            </p>
-            <button className="text-xs 2xl:text-sm 3xl:text-base  w-full text-center py-2.5 rounded-full    bg-[#CDD1E7] dark:bg-primary/30 font-semibold">
-              Become a Seller
-            </button>
-          </div>
+
           <div className="  rounded-[10px] w-full bg-card-foreground border p-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <div className="w-8 2xl:w-12 h-8 2xl:h-12 text-white rounded-[8px] font-semibold bg-primary flex items-center justify-center">
@@ -163,6 +153,21 @@ const Sidebar = () => {
                 priority
               />
             </Link>
+          </div>
+          <div className="  rounded-[10px] w-full border-2  border-[#E3E3E4] dark:border-card-foreground  px-4 py-3 flex items-center justify-start gap-4">
+            <h3 className="text-sm 2xl:text-base font-bold 3xl:text-lg">
+              <span className="text-[#007DFC]">Proudly</span> Powered by
+            </h3>
+            <div className="flex items-center justify-center bg-card-foreground border-2 p-2 rounded-[10px]">
+              <Image
+                src={"/admin/proppicks.svg"}
+                alt="logo"
+                width={140}
+                height={140}
+                priority
+                className="  3xl:w-[55px] 2xl:w-[35px] w-[20px] dark:hidden "
+              />
+            </div>
           </div>
         </div>
       </div>

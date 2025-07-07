@@ -30,11 +30,11 @@ export const navlinks = [
       icons:"upload",
       link: "/course-upload"
     },
-    {
-      title: "announcements",
-      icons:"announcement",
-      link: "/announcements"
-    },
+    // {
+    //   title: "announcements",
+    //   icons:"announcement",
+    //   link: "/announcements"
+    // },
   
   ];
 
@@ -49,11 +49,11 @@ export const navlinks = [
       icons:"trophy",
       link: "/leaderboard-settings"
     },
-    {
-      title: "messaging and email",
-      icons:"gmail",
-      link: "/messaging-and-email"
-    },
+    // {
+    //   title: "messaging and email",
+    //   icons:"gmail",
+    //   link: "/messaging-and-email"
+    // },
     
   ]
 
@@ -67,6 +67,16 @@ export const navlinks = [
       title: "customer support",
       icons:"headphones",
       link: "/customer-support"
+    },
+    {
+      title: "Add Member",
+      icons:"add",
+      link: "/add-member"
+    },
+    {
+      title: "create broadcast",
+      icons:"broadcast",
+      link: "/create-broadcast"
     },
    
   ];

@@ -18,24 +18,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Menu } from "lucide-react";
-import { navlinks } from "@/lib/constants";
+import { moderation, navlinks, others } from "@/lib/constants";
 import { ThemeToggle } from "./ToggleTheme";
 const tabLinks = [
   {
-    title: "feed",
-    icons: "feed",
+    title: "revenue",
+    icons: "home",
     href: "/",
   },
-
   {
-    title: "Signals",
-    icons: "signal-mobile",
-    href: "/signals",
+    title: "orders",
+    icons: "cart",
+    href: "/orders",
   },
   {
-    title: "leaders",
-    icons: "leaders",
-    href: "/leaders",
+    title: "customers",
+    icons: "users",
+    href: "/customers",
   },
 ];
 
@@ -56,7 +55,7 @@ const Tabbar = () => {
             className="flex flex-col flex-1 items-center"
           >
             <Image
-              src={"/icons/" + link.icons + ".svg"}
+              src={"/admin/" + link.icons + ".svg"}
               alt="Logo"
               width={index === 1 ? 20 : 28} // Larger width for index 1
               height={30}
@@ -119,7 +118,59 @@ const Tabbar = () => {
                 items-center gap-2 justify-start px-4 2xl:px-5  `}
                 >
                   <Image
-                    src={"/icons/" + link.icons + ".svg"}
+                    src={"/admin/" + link.icons + ".svg"}
+                    alt="icon"
+                    width={16}
+                    className="2xl:w-[20px] 3xl:w-[24px] dark:invert"
+                    height={16}
+                    priority
+                  />
+                  {link.title}
+                </Link>
+              ))}
+              <p className="px-2 text-sm mt-3 2xl:text-[15x] 3xl:text-base font-semibold mb-1 uppercase">
+                Moderations
+              </p>
+              {moderation.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.link}
+                  className={`inline-flex  text-sm 2xl:text-[15px] 3xl:text-base  capitalize   rounded-full 
+                ${
+                  pathname === link.link
+                    ? "bg-card py-2 font-semibold"
+                    : " py-2"
+                }
+                items-center gap-2 justify-start px-4 2xl:px-5  `}
+                >
+                  <Image
+                    src={"/admin/" + link.icons + ".svg"}
+                    alt="icon"
+                    width={16}
+                    className="2xl:w-[20px] 3xl:w-[24px] dark:invert"
+                    height={16}
+                    priority
+                  />
+                  {link.title}
+                </Link>
+              ))}
+              <p className="px-2 text-sm mt-3 2xl:text-[15x] 3xl:text-base font-semibold mb-1 uppercase">
+                Others
+              </p>
+              {others.map((link, index) => (
+                <Link
+                  key={index}
+                  href={link.link}
+                  className={`inline-flex  text-sm 2xl:text-[15px] 3xl:text-base  capitalize   rounded-full 
+                ${
+                  pathname === link.link
+                    ? "bg-card py-2 font-semibold"
+                    : " py-2"
+                }
+                items-center gap-2 justify-start px-4 2xl:px-5  `}
+                >
+                  <Image
+                    src={"/admin/" + link.icons + ".svg"}
                     alt="icon"
                     width={16}
                     className="2xl:w-[20px] 3xl:w-[24px] dark:invert"
@@ -130,55 +181,10 @@ const Tabbar = () => {
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col gap-1 my-2 ">
-              <p className="px-2 text-sm 2xl:text-[15x] 3xl:text-base font-semibold mb-1 uppercase">
-                Signal provider
-              </p>
 
-              <Accordion type="single" collapsible>
-                <AccordionItem value="item-1">
-                  <AccordionTrigger
-                    className={` border-none text-sm 2xl:text-[15px] 3xl:text-base capitalize   rounded-full 
-                
-                items-center gap-3 justify-start px-4 2xl:px-5  `}
-                  >
-                    <Image
-                      src={"/icons/" + "signals" + ".svg"}
-                      alt="icon"
-                      width={16}
-                      className="2xl:w-[20px] 3xl:w-[24px] dark:invert"
-                      height={16}
-                      priority
-                    />
-                    Signal
-                  </AccordionTrigger>
-                  <AccordionContent className="flex flex-col gap-4 pl-8">
-                    <Link href={"/signals"} className=" hover:font-semibold">
-                      Dashboard
-                    </Link>
-                    <Link href={"/"} className=" hover:font-semibold">
-                      Post a broadcast
-                    </Link>
-                    <Link href={"/"} className=" hover:font-semibold">
-                      Message Group
-                    </Link>
-                  </AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </div>
             <div className=" mt-auto space-y-2  ">
               <ThemeToggle />
-              <div className="  rounded-[10px] w-full bg-card-foreground border p-4">
-                <h2 className="text-sm 2xl:text-base font-semibold 3xl:text-lg">
-                  Share Your Expertise
-                </h2>
-                <p className="text-xs 2xl:text-sm mb-3 3xl:text-base">
-                  Share and earn money
-                </p>
-                <button className="text-xs 2xl:text-sm 3xl:text-base  w-full text-center py-2.5 rounded-full    bg-[#CDD1E7] dark:bg-purple-800/30 font-semibold">
-                  Become a Seller
-                </button>
-              </div>
+
               <div className="  rounded-[10px] w-full bg-card-foreground border p-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {/* <div className=" w-12 h-10 rounded-md bg-primary "></div> */}
@@ -201,6 +207,22 @@ const Tabbar = () => {
                     priority
                   />
                 </button>
+              </div>
+
+              <div className="  rounded-[10px] w-full border-2  border-[#E3E3E4] dark:border-card-foreground  px-4 py-3 flex items-center justify-start gap-4">
+                <h3 className="text-sm 2xl:text-base font-bold 3xl:text-lg">
+                  <span className="text-[#007DFC]">Proudly</span> Powered by
+                </h3>
+                <div className="flex items-center justify-center bg-card-foreground border-2 p-2 rounded-[10px]">
+                  <Image
+                    src={"/admin/proppicks.svg"}
+                    alt="logo"
+                    width={140}
+                    height={140}
+                    priority
+                    className="  3xl:w-[55px] 2xl:w-[35px] w-[20px] dark:hidden "
+                  />
+                </div>
               </div>
             </div>
           </div>

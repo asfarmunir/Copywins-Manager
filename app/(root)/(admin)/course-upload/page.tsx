@@ -235,7 +235,7 @@ const CoursesPendingReview = () => {
                       <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900 dark:text-white">
                         <div className="flex items-center justify-end gap-2">
                           <div className="flex items-center gap-1">
-                            <button className="px-4 md:w-20 text-center xl:w-36 py-2 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-700/20 dark:text-green-200">
+                            <button className="px-4 md:w-20 text-center xl:w-36 py-2 text-xs rounded-full bg-[#28A7451A] border border-green-400 dark:border-green-800 text-green-800 dark:bg-green-700/20 dark:text-green-200">
                               Yes
                             </button>
                             <button
