@@ -28,7 +28,7 @@ export default function RootLayout({
         {/* <AuthSessionProvider> */}
         <NextThemesProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
